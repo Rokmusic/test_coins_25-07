@@ -118,3 +118,28 @@
         margin-bottom: 0;
     }
 }
+
+@media (max-width: 385px) {
+    .logoContainer {
+        width: 208px;
+        height: 208px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 385px) {
+    .logoContainer {
+        width: 208px;
+        height: 208px;
+    }
+    .attention {
+        width: calc(100% - 186px);
+    }
+}
+
+@media (max-width: 365px) {
+    .logoContainer {
+        width: 163px;
+        height: 163px;
+    }
+}
