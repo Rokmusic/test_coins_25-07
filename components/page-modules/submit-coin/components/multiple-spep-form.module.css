@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 130px;
+}
+
+.container * {
+    color: #fff;
+}
+
+.container h1 {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-bottom: 150px;
+    }
+    .container h1 {
+        justify-content: center;
+        margin-top: 10px;
+        font-size: 24px;
+    }
+
+}
