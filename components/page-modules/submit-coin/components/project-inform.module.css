@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 77%;
+    max-width: calc(100% - 280px);
+    margin-left: auto;
 }
 
 .option {
@@ -152,19 +153,6 @@
 @media (min-width: 1920px) {
     .projectContainer {
       max-width: 72% !important;
-    }
-}
-
-@media (max-width: 1366px) {
-    .projectContainer {
-        max-width: 70%;
-    }
-}
-
-@media (max-width: 992px) {
-    .projectContainer {
-        max-width: calc(68% - 40px);
-        margin-right: auto;
     }
 }
 

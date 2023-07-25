@@ -74,7 +74,7 @@ const LogoContainer: FC<ILogoContainer> = ({ step, isMobile, fileObject, setFile
           </div>
 
           <div className={styles.logoNameContainer}>
-            {fileObject.url && fileObject.name && !isMobile && (
+            {fileObject.url && fileObject.name && !isMobile && step === 1 && (
               <button
                 type="button"
                 className={styles.removeBtn}
@@ -86,6 +86,7 @@ const LogoContainer: FC<ILogoContainer> = ({ step, isMobile, fileObject, setFile
             <span>
               {fileObject.url &&
                 !isMobile &&
+                step === 1 &&
                 (fileObject.name || 'Optimal dimensions 512x512px, size up to 1MB')}
             </span>
           </div>

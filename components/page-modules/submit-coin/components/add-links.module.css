@@ -1,5 +1,6 @@
 .linksContainer {
-  width: 77%;
+  max-width: calc(100% - 280px);
+  margin-left: auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -103,19 +104,6 @@
 @media (min-width: 1920px) {
   .linksContainer {
     max-width: 72% !important;
-  }
-}
-
-@media (max-width: 1366px) {
-  .linksContainer {
-      width: 70%;
-      margin-right: auto;
-  }
-}
-
-@media (max-width: 992px) {
-  .linksContainer {
-      width: calc(68% - 40px);
   }
 }
 
