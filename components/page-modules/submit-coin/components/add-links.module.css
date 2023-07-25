@@ -109,7 +109,7 @@
 
 @media (max-width: 768px) {
   .linksContainer {
-      width: 100%;
+      max-width: 100%;
       margin-left: auto;
       margin-top: 30px;
   }
