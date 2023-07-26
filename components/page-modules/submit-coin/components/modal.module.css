@@ -45,7 +45,7 @@
     padding-right: 80px;
     font-weight: 600;
     line-height: 47px;
-    background: linear-gradient(155.72deg, #9C74F1 35.45%, #3600A8 52.07%), #FFFFFF;
+    background: linear-gradient(155.72deg, #9C74F1 35.45%, #3600A8 110.07%), #FFFFFF;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -135,7 +135,7 @@
 
 @media (max-width: 1366px) {
     .modalContainer {
-        width: 50%;
+        width: 42%;
     }
     .paragraph {
         padding-right: 140px;
@@ -166,7 +166,7 @@
 @media (max-width: 768px) {
     .modalContainer {
         aspect-ratio: unset;
-        width: 96%;
+        width: 80%;
         height: auto;
         background-position: bottom;
     }
@@ -191,6 +191,14 @@
     }
     .paragraph {
         margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 440px) {
+    .modalContainer {
+        width: 96%;
+    }
+    .paragraph {
         padding: 0;
     }
 }
