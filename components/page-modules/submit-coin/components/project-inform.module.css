@@ -95,7 +95,7 @@
 
 .inputIcon {
     position: absolute;
-    top: calc(50% + 6px);
+    top: calc(50% - 2px);
     right: 16px;
     transform: translate(0, -50%);
 }
@@ -113,7 +113,7 @@
     background-color: rgba(29, 29, 29, 1);
 }
 
-.containerToogle {
+.containerToggle {
     display: flex;
     align-items: center;
     font-size: 16px;
@@ -122,7 +122,7 @@
     letter-spacing: -0.011em;
 }
 
-.toogleBtn {
+.toggleBtn {
     margin-right: 12px;
     background: rgba(29, 29, 29, 1);
     height: 31px;
@@ -150,9 +150,60 @@
     left: 22px;
 }
 
+.inputIcon {
+    cursor: pointer;
+}
+
+.submitted {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    border-radius: 12px;
+    background: rgba(34, 230, 124, 0.25);
+}
+
+.submitted span {
+    width: 100%;
+}
+
+.submitted span:first-child {
+    margin-bottom: 12px;
+    
+}
+
+.submitted span:nth-child(2) {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    margin-bottom: 4px;
+}
+
+.submitted a {
+    width: calc(100%);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    text-decoration: underline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 @media (min-width: 1920px) {
     .projectContainer {
       max-width: 72% !important;
+    }
+}
+
+@media (max-width: 996px) {
+    .projectContainer > label {
+        flex: 0 1 calc(100%);
+        margin-bottom: 16px;
+    }
+    .projectContainer > label:nth-child(4), .projectContainer > label:nth-child(5) {
+        max-width: calc(50% - 9px);
     }
 }
 
@@ -161,16 +212,9 @@
         max-width: 100%;
         margin-top: 60px;
     }
-    .projectContainer > label {
-        flex: 0 1 calc(100%);
-        margin-bottom: 16px;
-    }
     .required {
         font-size: 12px;
         vertical-align: middle;
-    }
-    .projectContainer > label:nth-child(4), .projectContainer > label:nth-child(5) {
-        max-width: calc(50% - 9px);
     }
     .inputIcon svg g {
         opacity: 1;

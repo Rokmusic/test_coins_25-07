@@ -1,4 +1,5 @@
 .modalContainer {
+    aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,21 +7,24 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 650px;
-    height: 650px;
+    width: 43%;
+    height: auto;
     background: rgba(13, 13, 13, 1);
     background-position: right 0 top 100px;
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     z-index: 55;
-  }
-  
-  .modalFrame {
+}
+
+.modalFrame {
+    aspect-ratio: 1 / 1;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin: auto;
     width: 97%;
     height: 97%;
     padding-top: 29px;
@@ -29,9 +33,13 @@
     padding-right: 22px;
     background-size: contain;
     background-repeat: no-repeat;
-  }
-  
-  .headline {
+    border-radius: 16px;
+    border: 3px solid;
+    box-shadow: 0px 0px 18px 0px #42457B inset;
+    border-image-source: linear-gradient(135.81deg, #42457B 0%, rgba(66, 69, 123, 0) 69.13%, #42457B 101.45%);
+}
+
+.headline {
     font-size: 42px;
     line-height: 47px;
     padding-right: 80px;
@@ -42,17 +50,17 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-  }
-  
-  .withoutGradient {
+}
+
+.withoutGradient {
     background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-  }
-  
-  .btnClose {
+}
+
+.btnClose {
     position: absolute;
     top: 29px;
     right: 26px;
@@ -60,17 +68,13 @@
     height: 24px;
     border-radius: 6px;
     border: 1.5px solid rgba(255, 255, 255, 1)
-  }
-  
-  .headline_3 {
+}
+
+.headline_3 {
     margin-top: 0;
-  }
-  
-  .promoteContainer {
-  
-  }
-  
-  .justFrom {
+}
+
+.justFrom {
     display: flex;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -78,25 +82,25 @@
     font-weight: 600;
     line-height: 18px;
     letter-spacing: 0em;
-  }
-  
-  .paragraph {
+}
+
+.paragraph {
     padding-right: 250px;
     font-size: 14px;
     font-weight: 400;
     line-height: 17px;
     letter-spacing: 0em;
-    color: rgba(200, 200, 200, 1);
-  }
-  
-  .controls {
+    color: rgba(200, 200, 200, 1) !important;
+}
+
+.controls {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin-top: auto;
-  }
-  
-  .promote {
+}
+
+.promote {
     position: relative;
     width: 275px;
     height: 65px;
@@ -105,9 +109,9 @@
     background: linear-gradient(0deg, #183DD4, #183DD4),
     linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
     border: 1px solid rgba(255, 255, 255, 0.1)
-  }
-  
-  .linkPromote {
+}
+
+.linkPromote {
     position: absolute;
     display: flex;
     align-items: center;
@@ -117,9 +121,9 @@
     bottom: 0;
     left: 0;
     z-index: 5;
-  }
-  
-  .no {
+}
+
+.no {
     width: 275px;
     height: 65px;
     padding: 16px 32px 16px 32px;
@@ -127,30 +131,52 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
     linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-  }
-  
-  @media (max-width: 1366px) {
-  
-  }
-  
-  @media (max-width: 992px) {
-  
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 1366px) {
     .modalContainer {
+        width: 50%;
+    }
+    .paragraph {
+        padding-right: 140px;
+    }
+    .headline {
+        line-height: normal;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .modalContainer {
+        width: 60%;
+    }
+    .controls {
+        margin-top: auto;
         width: 100%;
+        flex-direction: column-reverse;
+    }
+    .controls > button {
+        width: 80%;
+    }
+    .controls > button:last-child {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalContainer {
+        aspect-ratio: unset;
+        width: 96%;
         height: auto;
         background-position: bottom;
+    }
+    .controls > button {
+        width: 100%;
     }
     .modalFrame {
         border-radius: 12px;
         margin-bottom: 6px;
         padding-bottom: 30px;
-        box-shadow: 0px 0px 18px 0px rgba(255, 255, 255, 0.3) inset;
-        border-image-source: linear-gradient(135.81deg, #42457B 0%, rgba(66, 69, 123, 0) 69.13%, #42457B 101.45%);
-        border-width: 3px;
-        border-style: solid;
     }
     .headline_3 {
         font-size: 16px;
@@ -167,11 +193,4 @@
         margin-bottom: 30px;
         padding: 0;
     }
-    .controls {
-        margin-top: 20px;
-        flex-direction: column-reverse;
-    }
-    .controls > button:last-child {
-        margin-bottom: 20px;
-    }
-  }
+}

@@ -483,6 +483,18 @@ td:last-child {
   display: none !important;
 }
 
+.project-info .p-inputtext {
+  cursor: text;
+}
+
+.project-info .p-dropdown-label {
+  cursor: pointer;
+}
+
+.project-info .react-datepicker-wrapper {
+  cursor: pointer;
+}
+
 @media (min-width: 729px) {
   .p-sidebar {
     margin-top: 175px;

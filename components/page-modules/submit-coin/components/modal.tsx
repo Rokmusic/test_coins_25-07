@@ -32,10 +32,10 @@ const Modal: FC<IModalProps> = ({ setIsOpenModal, setStepModal, setStepFrame }) 
     >
       <div
         className={styles.modalFrame}
-        style={{ backgroundImage: isMobile ? '' : `url(${bgFrameModal.src})` }}
+      // style={{ backgroundImage: isMobile ? '' : `url(${bgFrameModal.src})` }}
       >
         <h3 className={styles.headline_3}>You coin has submitted on our site!</h3>
-        <div className={styles.promoteContainer}>
+        <div>
           <div className={styles.headline}>
             Promote<span className={styles.withoutGradient}> your token & Start </span>Earn
             <span className={styles.withoutGradient}> Money</span>

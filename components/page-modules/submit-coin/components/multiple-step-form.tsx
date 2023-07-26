@@ -28,6 +28,7 @@ const MultiStepFormContainer: FC = () => {
   const [dataProject, setDataProject] = useState<IDataProject>(initialDataProject);
   const [linksData, setLinksData] = useState<IDataLinks>(initialLinksData);
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [withoutErrors, setWithoutErrors] = useState<boolean>(false);
 
   const isMobile = useMedia({ maxWidth: 768 });
@@ -55,6 +56,7 @@ const MultiStepFormContainer: FC = () => {
       setFileObject(initialFile);
       setDataProject(initialDataProject);
       setLinksData(initialLinksData);
+      setIsSubmitted(false);
     }
   }, [stepFrame]);
 
@@ -108,6 +110,8 @@ const MultiStepFormContainer: FC = () => {
           setStep={setStep}
           dataProject={dataProject}
           setDataProject={setDataProject}
+          isSubmitted={isSubmitted}
+          setIsSubmitted={setIsSubmitted}
           refContainer={projectFormRef}
         />
       )}
@@ -128,9 +132,17 @@ const MultiStepFormContainer: FC = () => {
         getButtonStatus={getButtonStatus}
         nextButtonRef={nextButtonRef}
         onSubmitHandler={onSubmitHandler}
+        isSubmitted={isSubmitted}
       />
       {isOpenModal && (
-        <Modal setIsOpenModal={setIsOpenModal} setStepModal={setStep} setStepFrame={setStepFrame} />
+        <>
+          <Modal
+            setIsOpenModal={setIsOpenModal}
+            setStepModal={setStep}
+            setStepFrame={setStepFrame}
+          />
+          <div className={styles.frame} />
+        </>
       )}
     </section>
   );

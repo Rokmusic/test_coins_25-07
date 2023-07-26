@@ -13,6 +13,7 @@ interface IControlsProps {
   getButtonStatus: () => boolean;
   nextButtonRef: React.RefObject<HTMLButtonElement>;
   onSubmitHandler: () => void;
+  isSubmitted: boolean;
 }
 
 const Controls: FC<IControlsProps> = ({
@@ -21,6 +22,7 @@ const Controls: FC<IControlsProps> = ({
   getButtonStatus,
   nextButtonRef,
   onSubmitHandler,
+  isSubmitted,
 }) => {
   return (
     <div className={`${styles.controls} ${step === 1 ? styles.controlBtnNextFirstStep : ''}`}>
@@ -35,10 +37,10 @@ const Controls: FC<IControlsProps> = ({
           Back
         </button>
       )}
-      {step === 4 ? (
+      {step === 4 || isSubmitted ? (
         <button className={styles.controlBtn} onClick={onSubmitHandler}>
-          <ArrowSquareRight />
-          Submit Coin
+          {!isSubmitted && <ArrowSquareRight />}
+          Submit Coin{isSubmitted ? ' update' : ''}
         </button>
       ) : (
         <button

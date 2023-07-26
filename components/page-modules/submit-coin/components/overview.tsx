@@ -11,6 +11,8 @@ import styles from './overview.module.css';
 import telegramIcon from '@/public/telegram-white.svg';
 import twitterIcon from '@/public/twitter-white.svg';
 import facebookIcon from '@/public/facebook-white.svg';
+import discordIcon from '@/public/discord-white.svg';
+import redditIcon from '@/public/reddit-white.svg';
 import dangerIcon from '@/public/danger.svg';
 import telegramIconXl from '@/public/telegram-link.svg';
 import twitterIconXl from '@/public/twitter-link.svg';
@@ -19,6 +21,14 @@ import facebookIconXl from '@/public/facebook-link.svg';
 const Overview: FC<IOverviewProps> = ({ stepFrame, setStep, data }) => {
   const isMobile = useMedia({ maxWidth: 768 });
   const iconSize = isMobile ? 16 : 14;
+  const withSocial =
+    data.telegram.value ||
+    data.twitter.value ||
+    data.facebook.value ||
+    data.website.value ||
+    data.discord.value ||
+    data.reddit.value ||
+    data.linktree.value;
   useEffect(() => {
     const type = stepFrame.split('_')[0];
     const step = Number(stepFrame.split('_')[1]);
@@ -66,42 +76,53 @@ const Overview: FC<IOverviewProps> = ({ stepFrame, setStep, data }) => {
         <span>Description</span>
         <p>{data.description.value as string}</p>
       </div>
-      {(data.telegram.value || data.twitter.value || data.facebook.value) && (
+      {withSocial && (
         <div className={styles.social}>
-          {data.twitter.value && (
+          {data.website.value && (
             <span>
-              {isMobile && <span className={styles.socialName}>Twitter</span>}
-              <Image
-                src={isMobile ? twitterIconXl.src : twitterIcon.src}
-                width={iconSize}
-                height={iconSize}
-                alt="Twitter"
-              />
-              <span>{data.twitter.value}</span>
-            </span>
-          )}
-          {data.facebook.value && (
-            <span>
-              {isMobile && <span className={styles.socialName}>Facebook</span>}
-              <Image
-                src={isMobile ? facebookIconXl.src : facebookIcon.src}
-                width={iconSize}
-                height={iconSize}
-                alt="Facebook"
-              />
-              <span>{data.facebook.value}</span>
+              <span className={styles.socialName}>Website</span>
+              <span>{data.website.value}</span>
             </span>
           )}
           {data.telegram.value && (
             <span>
-              {isMobile && <span className={styles.socialName}>Telegram</span>}
-              <Image
-                src={isMobile ? telegramIconXl.src : telegramIcon.src}
-                width={iconSize}
-                height={iconSize}
-                alt="telegram"
-              />
+              <span className={styles.socialName}>Telegram</span>
+              <Image src={telegramIcon.src} width={iconSize} height={iconSize} alt="telegram" />
               <span>{data.telegram.value}</span>
+            </span>
+          )}
+          {data.twitter.value && (
+            <span>
+              <span className={styles.socialName}>Twitter</span>
+              <Image src={twitterIcon.src} width={iconSize} height={iconSize} alt="Twitter" />
+              <span>{data.twitter.value}</span>
+            </span>
+          )}
+          {data.discord.value && (
+            <span>
+              <span className={styles.socialName}>Discord</span>
+              <Image src={discordIcon.src} width={iconSize} height={iconSize} alt="Discord" />
+              <span>{data.discord.value}</span>
+            </span>
+          )}
+          {data.facebook.value && (
+            <span>
+              <span className={styles.socialName}>Facebook</span>
+              <Image src={facebookIcon.src} width={iconSize} height={iconSize} alt="Facebook" />
+              <span>{data.facebook.value}</span>
+            </span>
+          )}
+          {data.reddit.value && (
+            <span>
+              <span className={styles.socialName}>Reddit</span>
+              <Image src={redditIcon.src} width={iconSize} height={iconSize} alt="Reddit" />
+              <span>{data.reddit.value}</span>
+            </span>
+          )}
+          {data.linktree.value && (
+            <span>
+              <span className={styles.socialName}>Linktree</span>
+              <span>{data.linktree.value}</span>
             </span>
           )}
         </div>

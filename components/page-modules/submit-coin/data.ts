@@ -11,7 +11,7 @@ export const headlines = [
   },
   {
     id: 3,
-    headline: 'Add Linnks',
+    headline: 'Add Links',
   },
   {
     id: 4,
@@ -21,7 +21,7 @@ export const headlines = [
 
 export const initialDataProject = {
   blockchain: { name: 'Binance1', icon: binanceIcon.src, req: true },
-  contractAddress: { value: '', req: true },
+  contractAddress: { value: '0xb27fsgu3y45gijo42gúuig4iiofq3iojfoijcioj5tcc', req: true },
   name: { value: '', req: true },
   symbol: { value: '', req: true },
   launchDate: { value: new Date(Date.now()), req: true },

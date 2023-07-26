@@ -24,6 +24,8 @@ export interface IPojectProps {
   setStep: Dispatch<SetStateAction<TSteps>>;
   dataProject: IDataProject;
   setDataProject: Dispatch<SetStateAction<IDataProject>>;
+  isSubmitted: boolean;
+  setIsSubmitted: Dispatch<SetStateAction<boolean>>;
   refContainer: React.RefObject<HTMLDivElement>;
 }
 
