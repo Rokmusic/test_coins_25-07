@@ -96,15 +96,25 @@
 .controls {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: auto;
 }
 
+.controls > button {
+    width: calc(50% - 10px);
+    min-height: 65px;
+    padding: 16px 32px 16px 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: pre-wrap;
+}
+
+/* .controls > button > a {
+    padding: 16px 32px 16px 32px;
+} */
+
 .promote {
     position: relative;
-    width: 275px;
-    height: 65px;
-    padding: 16px 32px 16px 32px;
     border-radius: 12px;
     background: linear-gradient(0deg, #183DD4, #183DD4),
     linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
@@ -124,13 +134,16 @@
 }
 
 .no {
-    width: 275px;
-    height: 65px;
-    padding: 16px 32px 16px 32px;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
     linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+}
+
+@media (max-width: 1200px) {
+    .controls * {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 1366px) {
